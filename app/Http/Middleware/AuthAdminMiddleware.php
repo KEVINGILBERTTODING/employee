@@ -17,10 +17,8 @@ class AuthAdminMiddleware
     {
 
 
-        if (session('role') == 'admin_daskrimti' || session('role') == 'admin_umum') {
+        if (session('role') == 'user') {
             return redirect()->route('adminDashboard');
-        } elseif (session('role') == 'user') {
-            return redirect()->route('user');
         }
 
 

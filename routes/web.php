@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\BidangController;
 use App\Http\Controllers\admin\SupplierController;
 use App\Http\Controllers\admin_daskrimti\auth\AdminDaskrimtiAuthController;
 use App\Http\Controllers\admin_umum\auth\AdminUmumAuthController;
+use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\user\auth\UserAuthController;
 use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\user\NotificationController;
@@ -30,4 +31,5 @@ use Maatwebsite\Excel\Row;
 
 Route::get('/', [UserController::class, 'index'])->name('/')->middleware('authAdminMiddleware');
 Route::prefix('/user')->group(function () {
+    Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 });
