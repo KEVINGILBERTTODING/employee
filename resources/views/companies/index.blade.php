@@ -133,7 +133,8 @@
                             style="min-width: 11rem;">
 
 
-                            <li><a class="dropdown-item" href=""><i class="icon-mid bi bi-box-arrow-left me-2"></i>
+                            <li><a class="dropdown-item" href="{{ route('user.logout') }}"><i
+                                        class="icon-mid bi bi-box-arrow-left me-2"></i>
                                     Keluar</a></li>
                         </ul>
                     </div>
