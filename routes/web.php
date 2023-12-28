@@ -35,3 +35,4 @@ Route::post('/login', [AuthController::class, 'login'])->name('user.login');
 Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard')->middleware('AdminAuthMiddleware');
 Route::get('/companies', [CompaniesController::class, 'index'])->name('companies')->middleware('AdminAuthMiddleware');
 Route::get('/companies/all', [CompaniesController::class, 'getCompanies'])->name('companies.all')->middleware('AdminAuthMiddleware');
+Route::post('/companies/store', [CompaniesController::class, 'store'])->name('companies.store')->middleware('AdminAuthMiddleware');

@@ -61,6 +61,15 @@
 
                     </li>
 
+                    <li class="sidebar-item ">
+                        <a href="{{ route('companies') }}" class='sidebar-link'>
+                            <i class="bi bi-building-fill"></i>
+                            <span>Companies</span>
+                        </a>
+
+
+                    </li>
+
 
 
 
