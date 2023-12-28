@@ -273,7 +273,7 @@
                 serverSide: true,
                 ajax: '{{ url('companies/all') }}',
                 order: [
-                    [1, 'desc']
+                    [4, 'desc']
                 ],
 
                 columns: [{

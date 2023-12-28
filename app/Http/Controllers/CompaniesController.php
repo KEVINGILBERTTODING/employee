@@ -25,12 +25,13 @@ class CompaniesController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:companies,email',
             'address' => 'required|string'
         ], [
             'required' => ':attribute tidak boleh kosong!',
             'email' => ':attribute tidak valid!',
-            'string' => ':attrbute hanya boleh huruf dan angka!'
+            'string' => ':attribute hanya boleh huruf dan angka!',
+            'unique' => ':attribute telah terdaftar!'
         ], [
             'name' => 'Name',
             'email' => 'Email',
@@ -64,13 +65,14 @@ class CompaniesController extends Controller
         $validator = Validator::make($request->all(), [
             'id' => 'required|exists:companies,id',
             'name' => 'required|string',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:companies,email,' . $request->id . 'except,id',
             'address' => 'required|string'
         ], [
             'required' => ':attribute tidak boleh kosong!',
             'email' => ':attribute tidak valid!',
             'string' => ':attribute hanya boleh huruf dan angka!',
             'exists' => ':attrbute tidak valid!',
+            'unique' => ':attribute telah terdaftar!'
         ], [
             'name' => 'Name',
             'email' => 'Email',
