@@ -10,9 +10,8 @@
             <div class="sidebar-header position-relative">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="logo">
-                        {{-- <a href="{{ route('adminDashboard') }}"><img src="{{ asset('data/app/img/' . $dataApp['logo']) }}"
-                                alt="Logo" srcset=""></a> --}}
-                        <h5>PIATK</h5>
+
+                        <h5>ADMIN</h5>
 
                     </div>
                     <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
@@ -53,8 +52,8 @@
                 <ul class="menu">
                     <li class="sidebar-title">Menu</li>
 
-                    <li class="sidebar-item ">
-                        <a href="{{ route('adminDashboard') }}" class='sidebar-link'>
+                    <li class="sidebar-item">
+                        <a href="{{ route('user.dashboard') }}" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
                             <span>Dashboard</span>
                         </a>
@@ -62,122 +61,28 @@
 
                     </li>
 
-                    <li class="sidebar-title">Permohonan</li>
-
-
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class='sidebar-link '>
-                            <i class="bi bi-handbag"></i>
-                            <span>Permohonan Barang</span>
+                    <li class="sidebar-item">
+                        <a href="{{ route('companies') }}" class='sidebar-link'>
+                            <i class="bi bi-building-fill"></i>
+                            <span>Companies</span>
                         </a>
-
-
-                        <ul class="submenu">
-                            <li class="submenu-item ">
-                                <a href="{{ route('indexSemuaPermintaanAdmin') }}" class="submenu-link">Seluruh
-                                    Permohonan</a>
-
-                            </li>
-                            <li class="submenu-item  ">
-                                <a href="{{ route('indexProsesPermintaanAdmin') }}" class="submenu-link">Permohonan
-                                    Proses</a>
-                            </li>
-
-                            <li class="submenu-item  ">
-                                <a href="{{ route('indexValidPermintaanAdmin') }}" class="submenu-link">Permohonan Valid</a>
-
-                            </li>
-                            <li class="submenu-item  ">
-                                <a href="{{ route('indexTidakValidPermintaanAdmin') }}" class="submenu-link">Permohonan
-                                    Tidak Valid</a>
-                            </li>
-
-
-                        </ul>
 
 
                     </li>
 
-                    <li class="sidebar-title">Barang</li>
-                    <li class="sidebar-item  active has-sub">
-                        <a href="#" class='sidebar-link'>
-                            <i class="bi bi-box"></i>
-                            <span>Barang</span>
+                    <li class="sidebar-item  active">
+                        <a href="{{ route('employee') }}" class='sidebar-link'>
+                            <i class="bi bi-people-fill"></i>
+
+                            <span>Employee</span>
                         </a>
 
 
-                        <ul class="submenu ">
-                            <li class="submenu-item active">
-                                <a href="{{ route('admin/barang/barangMasuk') }}" class="submenu-link">Barang Masuk</a>
-
-                            </li>
-
-
-                            <li class="submenu-item">
-                                <a href="{{ route('admin/barang/barangKeluar') }}" class="submenu-link">Barang Keluar</a>
-                            </li>
-
-
-
-                        </ul>
                     </li>
 
 
 
-                    <li class="sidebar-title">Supplier</li>
-                    <li class="sidebar-item ">
-                        <a href="{{ route('supplier') }}" class='sidebar-link'>
-                            <i class="bi bi-boxes"></i>
-                            <span>Data Supplier</span>
-                        </a>
-                    </li>
 
-                    @if (session('role') == 'admin_daskrimti')
-                        <li class="sidebar-title ">Pengguna</li>
-
-
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-people"></i>
-                                <span>Data Pengguna</span>
-                            </a>
-
-
-                            <ul class="submenu ">
-                                <li class="submenu-item  ">
-                                    <a href="{{ route('adminEmployee') }}" class="submenu-link">Pegawai</a>
-
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="{{ route('adminAdminUmum') }}" class="submenu-link">Admin Umum</a>
-                                </li>
-
-
-
-                            </ul>
-
-
-                        </li>
-
-                        <li class="sidebar-title">Bidang</li>
-                        <li class="sidebar-item ">
-                            <a href="{{ route('bidang') }}" class='sidebar-link'>
-                                <i class="bi bi-diagram-3"></i>
-                                <span>Data Bidang</span>
-                            </a>
-                        </li>
-                    @endif
-
-
-
-
-                    <li class="sidebar-title">Profil Saya</li>
-                    <li class="sidebar-item ">
-                        <a href="{{ route('adminProfile') }}" class='sidebar-link'>
-                            <i class="bi bi-person"></i>
-                            <span>Profil</span>
-                        </a>
-                    </li>
 
 
 
@@ -204,20 +109,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-lg-0">
 
-                        {{-- <li class="nav-item dropdown me-3" id="btnNotification">
-                            <a class="nav-link active text-gray-600" href="#" data-bs-target="#modal_notification"
-                                data-bs-toggle="modal" data-bs-display="static" aria-expanded="false">
-                                <i class='bi bi-bell bi-sm bi-sub fs-4'>
 
-                                    @if ($totalNotificationRead != 0)
-                                        <span class="badge bg-danger rounded-pill text-sm" id="ic_notification">
-                                            {{ $totalNotificationRead }}
-                                        </span>
-                                    @endif
-                                </i>
-                            </a>
-
-                        </li> --}}
 
 
                     </ul>
@@ -225,18 +117,14 @@
                         <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="user-menu d-flex">
                                 <div class="user-name text-end me-3">
-                                    <h6 class="mb-0 text-gray-600">{{ $dataAdmin['name'] }}</h6>
+                                    <h6 class="mb-0 text-gray-600">{{ session('email') }}</h6>
                                     <p class="mb-0 text-sm text-gray-600">
-                                        @if (session('role') == 'admin_daskrimti')
-                                            Admin Daskrimti
-                                        @elseif (session('role') == 'admin_umum')
-                                            Admin Umum
-                                        @endif
+                                        Administrator
                                     </p>
                                 </div>
                                 <div class="user-img d-flex align-items-center">
                                     <div class="avatar avatar-md">
-                                        <img src="{{ asset('data/profile_photo/' . $dataAdmin['profile_photo']) }}">
+                                        <img src="{{ asset('data/profile_photo/default.png') }}">
                                     </div>
                                 </div>
                             </div>
@@ -244,21 +132,9 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton"
                             style="min-width: 11rem;">
 
-                            <li><a class="dropdown-item" href="{{ route('adminProfile') }}"><i
-                                        class="icon-mid bi bi-person me-2"></i>Profil
-                                    Saya</a></li>
 
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-                            @if (session('role') == 'admin_daskrimti')
-                                <li><a class="dropdown-item" href="{{ route('logOutAdminDaskrimti') }}"><i
-                                            class="icon-mid bi bi-box-arrow-left me-2"></i> Keluar</a></li>
-                            @elseif (session('role') == 'admin_umum')
-                                <li><a class="dropdown-item" href="{{ route('logOutAdminUmum') }}"><i
-                                            class="icon-mid bi bi-box-arrow-left me-2"></i> Keluar</a></li>
-                            @endif
+                            <li><a class="dropdown-item" href=""><i class="icon-mid bi bi-box-arrow-left me-2"></i>
+                                    Keluar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -271,14 +147,14 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Daftar Barang Masuk</h3>
+                <h3>Daftar Employee</h3>
 
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('adminDashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Barang Masuk</li>
+                        <li class="breadcrumb-item"><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+
                     </ol>
                 </nav>
             </div>
@@ -288,13 +164,9 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title">
-                    Table Daftar Barang Masuk
+                    Table Daftar Employee
                 </h5>
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-warning" style="margin-right: 10px;" data-bs-toggle="modal"
-                        data-bs-target="#modal_filter">
-                        <i class="fa fa-filter"></i> Filter
-                    </button>
 
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_insert">
                         <i class="fa fa-plus"></i> Tambah
@@ -304,22 +176,18 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive w-100">
-                    <table class="table" id="tableBarang">
+                    <table class="table" id="tableData">
 
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Tanggal Masuk</th>
-                                <th>Nama Supplier</th>
-                                <th>Nama Barang</th>
-                                <th>Stok</th>
-                                <th>Stok Awal</th>
-                                <th>Satuan</th>
-                                <th>Keterangan</th>
-                                <th>Harga Satuan</th>
-                                <th>Total</th>
-
-                                <th>Aksi</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Company Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Date</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
@@ -330,16 +198,13 @@
             </div>
         </div>
 
-        {{-- modal update --}}
-        @include('admin_main.barang.modal.update')
+
+        {{-- include modal update --}}
+        @include('employee.modal.update')
+
 
         {{-- include modal insert --}}
-        @include('admin_main.barang.modal.insert')
-
-        {{-- include modal filter --}}
-        @include('admin_main.barang.modal.modal_filter_barang_masuk')
-
-
+        @include('employee.modal.create')
 
     </section>
 @endsection
@@ -350,7 +215,7 @@
     <script>
         $(document).on('click', '.btnDelete', function() {
             var id = $(this).data('id');
-            console.log(id);
+
             Swal.fire({
                 title: 'Konfirmasi Hapus Data',
                 text: 'Apakah Anda yakin ingin menghapus data ini?',
@@ -365,7 +230,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
 
-                    window.location.href = '/deleteBarang/' + id;
+                    window.location.href = '/employee/destroy/' + id;
 
                 }
             });
@@ -373,31 +238,30 @@
     </script>
 
     <script>
+        // get data companies using ajax
         function view(id) {
             $.ajax({
                 type: "get",
-                url: "/getDetailBarang/" + id,
+                url: "/employee/" + id,
                 data: "data",
                 dataType: "json",
                 success: function(response) {
-                    $('#barang_id').val(id);
-                    $('#nama_barang').val(response.nama_barang);
-                    $('#stok').val(response.stok);
-                    $('#satuan').val(response.satuan);
-                    $('#keterangan').val(response.keterangan);
-                    $('#harga_satuan').val(formatRupiah(response.harga_satuan));
-                    $('#total').val(formatRupiah(response.total));
+                    $('#employee_id').val(id);
+                    $('#first_nm').val(response.first_nm);
+                    $('#company_id').val(response.company_id);
+                    $('#last_nm').val(response.last_nm);
+                    $('#email').val(response.email);
+                    $('#phone').val(response.phone);
+
 
                     $('#modal_update').modal('show');
-
-
 
 
                 },
                 error: function(response) {
                     Swal.fire({
                         title: 'Error',
-                        text: 'Gagal mengambil data barang!',
+                        text: 'Gagal mengambil data!',
                         icon: 'warning',
                     });
                 }
@@ -406,30 +270,36 @@
 
         }
 
-        function formatRupiah(value) {
-            return new Intl.NumberFormat('id-ID', {
-                style: 'currency',
-                currency: 'IDR',
-                minimumFractionDigits: 0, // Set minimumFractionDigits ke 0 untuk menghilangkan angka dibelakang koma
-                maximumFractionDigits: 0 // Set maximumFractionDigits ke 0 juga, meskipun seharusnya sudah menjadi default 0
-            }).format(value);
-        }
 
-
-
+        //  server side table
         $(document).ready(function() {
-            $('#tableBarang').DataTable({
+            $('#tableData').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{ url('getAllBarang') }}',
+                ajax: '{{ url('employee/all') }}',
                 order: [
-                    [1, 'desc']
+                    [6, 'desc']
                 ],
-
                 columns: [{
                         render: function(data, type, row, meta) {
                             return meta.row + meta.settings._iDisplayStart + 1;
                         },
+                    },
+
+                    {
+                        data: 'first_nm'
+                    },
+                    {
+                        data: 'last_nm'
+                    },
+                    {
+                        data: 'company_name'
+                    },
+                    {
+                        data: 'email'
+                    },
+                    {
+                        data: 'phone'
                     },
                     {
                         data: 'created_at',
@@ -439,51 +309,8 @@
                             // Format tanggal menggunakan moment.js
                             return moment(data).format('MMMM Do YYYY, H:mm:ss');
                         },
-                    }, {
-                        data: 'nama',
-                        render: function(data) {
-                            if (data == null) {
-                                return 'Supplier telah dihapus.';
-                            }
-                            return data;
+                    },
 
-                        }
-
-                    },
-                    {
-                        data: 'nama_barang'
-                    },
-                    {
-                        data: 'stok'
-                    },
-                    {
-                        data: 'stok_awal'
-                    },
-                    {
-                        data: 'satuan'
-                    },
-                    {
-                        data: 'keterangan'
-                    },
-                    {
-                        data: 'harga_satuan',
-                        render: function(data) {
-                            if (data == null) {
-                                return '-';
-
-                            }
-                            return formatRupiah(data);
-                        }
-                    }, {
-                        data: 'total',
-                        render: function(data) {
-                            if (data == null) {
-                                return '-';
-                            }
-
-                            return formatRupiah(data);
-                        }
-                    },
                     {
                         render: function(data, type, row) {
                             var buttons =
@@ -494,42 +321,10 @@
                                 .id + ')"><i class="far fa-trash-alt"></i></button>';
 
                             return buttons;
-
                         }
                     }
                 ],
             });
-
-
         });
-    </script>
-
-    {{-- Format rupiah --}}
-    <script>
-        $(document).ready(function() {
-            $('.rupiahInput').on('input', function() {
-
-
-                // Mengambil nilai tanpa tanda ribuan
-                var inputValue = $(this).val();
-
-                // Hapus karakter selain digit
-                var numericValue = inputValue.replace(/[^0-9]/g, '');
-
-                // Format sebagai rupiah
-                var formattedValue = formatRupiah(numericValue);
-
-                // Update nilai input
-                $(this).val(formattedValue);
-            });
-        });
-
-        function formatRupiah(angka) {
-            var reverse = angka.toString().split('').reverse().join('');
-            var ribuan = reverse.match(/\d{1,3}/g);
-            var formattedValue = ribuan.join('.').split('').reverse().join('');
-
-            return 'Rp ' + formattedValue;
-        }
     </script>
 @endsection

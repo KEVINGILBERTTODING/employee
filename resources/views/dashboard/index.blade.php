@@ -70,6 +70,16 @@
 
                     </li>
 
+                    <li class="sidebar-item ">
+                        <a href="{{ route('employee') }}" class='sidebar-link'>
+                            <i class="bi bi-people-fill"></i>
+
+                            <span>Employee</span>
+                        </a>
+
+
+                    </li>
+
 
 
 

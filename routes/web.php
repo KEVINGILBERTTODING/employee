@@ -10,6 +10,7 @@ use App\Http\Controllers\admin_daskrimti\auth\AdminDaskrimtiAuthController;
 use App\Http\Controllers\admin_umum\auth\AdminUmumAuthController;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\user\auth\UserAuthController;
 use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\user\NotificationController;
@@ -39,3 +40,11 @@ Route::post('/companies/store', [CompaniesController::class, 'store'])->name('co
 Route::post('/companies/update', [CompaniesController::class, 'update'])->name('companies.update')->middleware('AdminAuthMiddleware');
 Route::get('/companies/{id}', [CompaniesController::class, 'getCompaniesById'])->name('companies.getId')->middleware('AdminAuthMiddleware');
 Route::get('/companies/destroy/{id}', [CompaniesController::class, 'destroy'])->name('companies.destroy')->middleware('AdminAuthMiddleware');
+
+
+Route::get('/employee', [EmployeeController::class, 'index'])->name('employee')->middleware('AdminAuthMiddleware');
+Route::get('/employee/all', [EmployeeController::class, 'getEmployee'])->name('employee.all')->middleware('AdminAuthMiddleware');
+Route::post('/employee/store', [EmployeeController::class, 'store'])->name('employee.store')->middleware('AdminAuthMiddleware');
+Route::post('/employee/update', [EmployeeController::class, 'update'])->name('employee.update')->middleware('AdminAuthMiddleware');
+Route::get('/employee/{id}', [EmployeeController::class, 'getEmployeeById'])->name('employee.getId')->middleware('AdminAuthMiddleware');
+Route::get('/employee/destroy/{id}', [EmployeeController::class, 'destroy'])->name('employee.destroy')->middleware('AdminAuthMiddleware');
