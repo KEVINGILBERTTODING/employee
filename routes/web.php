@@ -36,3 +36,6 @@ Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user.dashb
 Route::get('/companies', [CompaniesController::class, 'index'])->name('companies')->middleware('AdminAuthMiddleware');
 Route::get('/companies/all', [CompaniesController::class, 'getCompanies'])->name('companies.all')->middleware('AdminAuthMiddleware');
 Route::post('/companies/store', [CompaniesController::class, 'store'])->name('companies.store')->middleware('AdminAuthMiddleware');
+Route::post('/companies/update', [CompaniesController::class, 'update'])->name('companies.update')->middleware('AdminAuthMiddleware');
+Route::get('/companies/{id}', [CompaniesController::class, 'getCompaniesById'])->name('companies.getId')->middleware('AdminAuthMiddleware');
+Route::get('/companies/destroy/{id}', [CompaniesController::class, 'destroy'])->name('companies.destroy')->middleware('AdminAuthMiddleware');

@@ -189,7 +189,7 @@
 
         {{-- include modal insert --}}
         @include('companies.modal.create')
-
+        @include('companies.modal.update')
 
     </section>
 @endsection
@@ -215,7 +215,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
 
-                    window.location.href = '/deleteBarang/' + id;
+                    window.location.href = '/companies/destroy/' + id;
 
                 }
             });
@@ -223,31 +223,27 @@
     </script>
 
     <script>
+        // get data companies using ajax
         function view(id) {
             $.ajax({
                 type: "get",
-                url: "/getDetailBarang/" + id,
+                url: "/companies/" + id,
                 data: "data",
                 dataType: "json",
                 success: function(response) {
-                    $('#barang_id').val(id);
-                    $('#nama_barang').val(response.nama_barang);
-                    $('#stok').val(response.stok);
-                    $('#satuan').val(response.satuan);
-                    $('#keterangan').val(response.keterangan);
-                    $('#harga_satuan').val(formatRupiah(response.harga_satuan));
-                    $('#total').val(formatRupiah(response.total));
+                    $('#companies_id').val(id);
+                    $('#name').val(response.name);
+                    $('#email').val(response.email);
+                    $('#address').val(response.address);
 
                     $('#modal_update').modal('show');
-
-
 
 
                 },
                 error: function(response) {
                     Swal.fire({
                         title: 'Error',
-                        text: 'Gagal mengambil data barang!',
+                        text: 'Gagal mengambil data!',
                         icon: 'warning',
                     });
                 }
@@ -257,9 +253,7 @@
         }
 
 
-
-
-
+        //  server side table
         $(document).ready(function() {
             $('#tableCompanies').DataTable({
                 processing: true,
