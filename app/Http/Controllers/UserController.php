@@ -12,4 +12,8 @@ class UserController extends Controller
 
         return view('user.auth.login');
     }
+    function dashboard()
+    {
+        return view('dashboard.index');
+    }
 }

@@ -31,7 +31,12 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (auth()->attempt($credentials)) {
-            return 'berhasil';
+            $userId = auth()->user()->id;
+            $email = auth()->user()->email;
+            $request->session()->put('id', $userId);
+            $request->session()->put('email', $email);
+            $request->session()->put('role', 'admin');
+            return redirect()->route('user.dashboard');
         }
 
         return redirect()->route('/')->with('failed', 'Kata sandi salah!');
